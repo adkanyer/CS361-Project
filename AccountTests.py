@@ -1,6 +1,6 @@
 import unittest
 
-class TestCommands(unittest.TestCase):
+class AccountTests(unittest.TestCase):
 
     def test_command_create_account(self):
         #when create account is entered, a string
