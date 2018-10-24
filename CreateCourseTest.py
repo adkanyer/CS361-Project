@@ -1,6 +1,6 @@
 import unittest
 
-class CourseTests(unittest.TestCase):
+class CreateCourseTests(unittest.TestCase):
     def setUp(self):
         self.ui = UI()
 
