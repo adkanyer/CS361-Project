@@ -1,5 +1,6 @@
 import unittest
 
+
 class DeleteAccountTest(unittest.TestCase):
     def setUp(self):
         self.ui = UI()

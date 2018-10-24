@@ -1,5 +1,6 @@
 import unittest
 
+
 class CreateAccountTest(unittest.TestCase):
     def setUp(self):
         self.ui = UI()
