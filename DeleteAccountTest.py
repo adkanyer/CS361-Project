@@ -21,7 +21,7 @@ class DeleteAccountTest(unittest.TestCase):
             The response is a string of either:
             - "Account Deleted" if successful
             - "Unable to delete account" if unsuccessful
-    """
+        """
 
     def test_command_delete_account_supervisor(self):
 
