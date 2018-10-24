@@ -8,18 +8,18 @@ class AssignTests(unittest.TestCase):
             - TA Name
             - Class Number
             The response is a string, either:
-            - Success: "Assigned {TA Name} to {Class Number}."
-            - Failure: "Error assigning to class. {Explanation}."
+            - Success: "Assigned to class."
+            - Failure: "Error assigning to class."
         """
 
         # Command: "assign_ta apoorv 361", expect success
-        self.assertEqual(command("assign_ta apoorv 361"), "Assigned apoorv to 361.")
+        self.assertEqual(command("assign_ta apoorv 361"), "Assigned to class")
         # Command: "assign_ta apoorv", expect failure (no class given)
-        self.assertEqual(command("assign_ta apoorv"), "Error assigning to class. No class given.")
+        self.assertEqual(command("assign_ta apoorv"), "Error assigning to class.")
         # Command: "assign_ta", expect failure (no ta name given)
-        self.assertEqual(command("assign_ta"), "Error assigning to class. No ta given.")
+        self.assertEqual(command("assign_ta"), "Error assigning to class.")
         # Command: "assign_ta andy 361", expect failure (not a TA)
-        self.assertEqual(command("assign_ta andy 361"), "Error assigning to class. Not a TA")
+        self.assertEqual(command("assign_ta andy 361"), "Error assigning to class.")
 
     def test_assign_instructor(self):
         """
@@ -27,12 +27,21 @@ class AssignTests(unittest.TestCase):
             - Instructor Name
             - Class Number
             The response is a string, either:
-            - Success: "Assigned {Instructor Name} to {Class Number}."
-            - Failure: "Error assigning to class. {Explanation}."
+            - Success: "Assigned to class."
+            - Failure: "Error assigning to class."
         """
 
         # Command: "assign_instructor jayson 361", expect success
-        self.assertEqual(command("assign_instructor jayson 361"), "Assigned jayson to 361.")
+        self.assertEqual(command("assign_instructor jayson 361"), "Assigned to class.")
+
+        # Command: "assign_instructor andy 361", expect error (not an instructor)
+        self.assertEqual(command("assign_instructor andy 361"), "Error assigning to class.")
+
+        # Command: "assign_instructor jayson", expect error (no class given)
+        self.assertEqual(command("assign_instructor jayson"), "Error assigning to class.")
+
+        # Command: "assign_instructor", expect error (no instructor given)
+        self.assertEqual(command("assign_instructor"), "Error assigning to class.")
 
     def test_assign_lab(self):
         """
@@ -41,18 +50,18 @@ class AssignTests(unittest.TestCase):
             - Class Number
             - Lab Number
             The response is a string, either:
-            - Success: "Assigned {TA Name} to {Class Number} lab {Lab Number}."
-            - Failure: "Error assigning to Lab. {Explanation}."
+            - Success: "Assigned to lab."
+            - Failure: "Error assigning to Lab."
         """
 
         # Command: "assign_lab apoorv 361", expect success
-        self.assertEqual(command("assign_ta apoorv 361 801"), "Assigned apoorv to 361 lab 801.")
+        self.assertEqual(command("assign_ta apoorv 361 801"), "Assigned to class.")
         # Command: "assign_lab apoorv", expect failure (no class given)
-        self.assertEqual(command("assign_lab apoorv"), "Error assigning to lab. No class given.")
+        self.assertEqual(command("assign_lab apoorv"), "Error assigning to lab.")
         # Command: "assign_lab", expect failure (no ta name given)
-        self.assertEqual(command("assign_lab"), "Error assigning to lab. No ta given.")
+        self.assertEqual(command("assign_lab"), "Error assigning to lab.")
         # Command: "assign_lab andy 361", expect failure (not a TA)
-        self.assertEqual(command("assign_lab andy 361"), "Error assigning to lab. Not a TA")
+        self.assertEqual(command("assign_lab andy 361"), "Error assigning to lab.")
 
     def view_instructor_assignments(self):
         """
