@@ -22,7 +22,7 @@ class DeleteAccountTest(unittest.TestCase):
             The response is a string of either:
             - "Account Deleted" if successful
             - "Unable to delete account" if unsuccessful
-    """
+        """
 
     def test_command_delete_account_supervisor(self):
 
@@ -63,7 +63,7 @@ class DeleteAccountTest(unittest.TestCase):
         # login as administrator
         self.ui.command("login userAdministrator password")
         # not enough arguments
-        self.assertEquals("delete_account", "Unable to delete_account")
+        self.assertEquals("delete_account", "Unable to delete account")
 
     def test_command_delete_account_nonexisting(self):
         # login as supervisor
