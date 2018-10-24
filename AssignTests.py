@@ -53,3 +53,22 @@ class AssignTests(unittest.TestCase):
         self.assertEqual(command("assign_lab"), "Error assigning to lab. No ta given.")
         # Command: "assign_lab andy 361", expect failure (not a TA)
         self.assertEqual(command("assign_lab andy 361"), "Error assigning to lab. Not a TA")
+
+    def view_instructor_assignments(self):
+        """
+            When view_instructor_assignments command is entered, it takes no arguments
+            The response is a string with a line for each course in format
+                "{Course Number} {Course Name} {Instructor Name}"
+        """
+        self.assertEquals(command("view_instructor_assignments"),
+                          "361 SystemsProgramming jayson")
+
+    def view_ta_assignments(self):
+        """
+            When view_ta_assignments command is entered, it takes no arguments
+            The response is a string with a line for each course in format
+                "{Course Number} {Course Name} lab {Lab Number} {TA Name}"
+
+        """
+        self.assertEquals(command("view_ta_assignments"),
+                          "361 SystemsProgramming lab 801 apoorv")
