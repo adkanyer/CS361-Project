@@ -2,21 +2,21 @@ import unittest
 
 class AccountTests(unittest.TestCase):
 
+    # when create account is entered, a string
+    # is returned indicating the account has been
+    # created, prompting for more info or an error message.
     def test_command_create_account(self):
-        #when create account is entered, a string
-        #is returned indicating the account has been
-        #created, prompting for more info or an error message.
-
         #input: create account tyler 1234
-        self.assertEquals(command("create_account tyler 1234 john3885@uwm.edu"),"Account has been created for tyler.")
+        self.assertEquals(command("create_account tyler 1234 john3885@uwm.edu"),"Account has been created.")
 
+     def test_command_create_account_duplicate(self):
         #no account created when input is bad.
         #input: create account tyler 1234 (duplicate username)
-        self.assertEquals(command("create_account tyler 1234 john3885@uwm.edu"), "Error in creating account.")
+        self.assertEquals(command("create_account tyler 1234 john3885@uwm.edu"), "Error creating account.")
 
-        #username not entered in command.
-        #input: create account
-        self.assertEquals(command("create_account"), "Username: ")
+        # username not entered in command.
+        # no account created
+        self.assertEquals(command("create_account"), "Error creating account.")
 
         #password not entered with command
         #input: create account andy
