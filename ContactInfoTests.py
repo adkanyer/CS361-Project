@@ -30,4 +30,4 @@ class ContactInfoTests(unittest.TestCase):
         # Command: "view_info fake", expect success
         self.assertEquals(self.ui.command("view_info fake"), "Username does not exist.")
 
-    def test_command_Instructor_change_contact_info(self):
+    #def test_command_Instructor_change_contact_info(self):
