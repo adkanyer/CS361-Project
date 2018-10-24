@@ -15,8 +15,8 @@ class EditAccountTest(unittest.TestCase):
         self.ui.command("create_account userTA password ta")
 
         """
-            The supervisor and administrator are able to create accounts
-            when create_account command is entered, it expects 2 arguments:
+            The supervisor and administrator are able to edit accounts
+            when edit_account command is entered, it expects 2 arguments:
             - username
             - new password
             The response is a string of either:
