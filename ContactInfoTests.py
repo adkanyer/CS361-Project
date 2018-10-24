@@ -22,12 +22,38 @@ class ContactInfoTests(unittest.TestCase):
        # self.ui.command("login userTA userPassword")
 
         # view own contact info, expect success
-        self.assertEquals(self.ui.command("view_info"), "Username: erin, Email: erinfink@uwm.edu, Phone number: 1231231234, "
-                                                "Address: 2311 E Hartford Ave Milwaukee, WI 53211")
+        self.assertEquals(self.ui.command("view_info"), "Username: erin, Email: erinfink@uwm.edu, "
+                                                        "Phone number: 1231231234, "
+                                                        "Address: 2311 E Hartford Ave Milwaukee, WI 53211")
         # Command: "view_info user", expect success
         self.assertEquals(self.ui.command("view_info Erin"), "Username: erin, Email: erinfink@uwm.edu")
 
         # Command: "view_info fake", expect success
         self.assertEquals(self.ui.command("view_info fake"), "Username does not exist.")
 
-    #def test_command_Instructor_change_contact_info(self):
+    def test_command_Instructor_change_contact_info_valid(self):
+        self.ui.command("login userInstructor password")
+
+        # Instructor changes own email, phone number, password; expected success
+        self.assertEquals(self.ui.command("edit_contact email: erincfink@uwm.edu"), "Email has been updated.")
+        self.assertEquals(self.ui.command("edit_contact phone: 1234123443"), "Phone has been updated.")
+        self.assertEquals(self.ui.command("edit_contact address: 1234 Sesame St Milwaukee, WI 12312"),
+                          "Address has been updated.")
+
+    def test_command_TA_change_contact_info(self):
+        self.ui.command("login userTA password")
+
+        # Ta changes own info
+        self.assertEquals(self.ui.command("edit_contact email: erincfink@uwm.edu"), "Email has been updated.")
+        self.assertEquals(self.ui.command("edit_contact phone: 1234123443"), "Phone has been updated.")
+        self.assertEquals(self.ui.command("edit_contact address: 1234 Sesame St Milwaukee, WI 12312"),
+                          "Address has been updated.")
+
+    def test_command_edit_contact_format(self):
+        self.ui.command("login userInstructor password")
+
+        # no argument given
+        self.assertEquals(self.ui.command("edit_contact"), "Unable to change contact information")
+
+
+
