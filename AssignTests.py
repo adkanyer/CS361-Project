@@ -160,9 +160,9 @@ class AssignTests(unittest.TestCase):
     def view_ta_assignments_by_instructor(self):
         self.ui.command("login Instructor InstructorPassword")
         self.assertEquals(self.ui.command("view_ta_assignments"),
-                          "Error viewing ta assignments.")
+                          "361 SystemsProgramming lab 801 TA")
 
     def view_ta_assignments_by_ta(self):
         self.ui.command("login TA TAPassword")
         self.assertEquals(self.ui.command("view_ta_assignments"),
-                          "Error viewing ta assignments.")
+                          "361 SystemsProgramming lab 801 TA")
