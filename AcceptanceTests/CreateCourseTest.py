@@ -32,13 +32,13 @@ class CreateCourseTests(unittest.TestCase):
         self.ui.command("create_account userInstructor userPassword instructor")
         self.ui.command("login userInstructor userPassword")
         self.assertEquals(self.ui.command("create_course 361 SystemsProgramming"),
-                          "Only supervisors or administrators can create courses")
+                          "Error creating course.")
 
     def test_command_create_course_TA(self):
         self.ui.command("create_account userTA userPassword ta")
         self.ui.command("login userInstructor userPassword")
         self.assertEquals(self.ui.command("create_course 361 SystemsProgramming"),
-                          "Only supervisors or administrators can create courses")
+                          "Error creating course.")
 
     def test_command_create_course_format(self):
         # Command: "create_course", expect error, not enough arguments
@@ -47,7 +47,7 @@ class CreateCourseTests(unittest.TestCase):
         self.assertEquals(self.ui.command("create_course"), "Error creating course.")
         self.assertEquals(self.ui.command("create_course 361"), "Error creating course.")
         self.assertEquals(self.ui.command("create_course SystemProgramming"), "Error creating course.")
-        self.assertEquals(self.ui.command("create_course SystemsProgramming 361"), "Not the right arguments [#, name]")
+        self.assertEquals(self.ui.command("create_course SystemsProgramming 361"), "Erro creating course.")
 
 
     def test_command_create_course_duplicate(self):
