@@ -7,7 +7,7 @@ class Logout:
 
     """
         args is a list containing the following:
-           ["logout", "username"]
+           ["logout"]
     """
     def action(self, args, user):
         if user is None:

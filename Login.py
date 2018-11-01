@@ -2,6 +2,7 @@ import TextFileInterface
 import User
 import hashlib
 
+
 class Login:
 
     def __init__(self, database):
@@ -14,6 +15,9 @@ class Login:
     def action(self, args, user):
         if user is not None:
             print("Someone else is logged in.")
+            return user
+        if len(args) != 3:
+            print("Username or Password is Incorrect")
             return user
 
         user_list = self.database.get_accounts()
