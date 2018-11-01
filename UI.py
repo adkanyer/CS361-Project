@@ -3,6 +3,7 @@ import Logout
 import CreateAccount
 import DeleteAccount
 import CreateCourse
+import AssignCourse
 
 
 class UI(object):
@@ -14,6 +15,7 @@ class UI(object):
         "create_account": CreateAccount.CreateAccount(),
         "delete_account": DeleteAccount.DeleteAccount(),
         "create_course": CreateCourse.CreateCourse()
+        "assign_course": AssignCourse.AssignCourse()
     }
 
     def __init__(self):

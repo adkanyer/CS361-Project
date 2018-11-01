@@ -11,3 +11,6 @@ class AssignCourse(Command.Command):
     """
     def action(self, args):
         print("Assign Course command entered.")
+        """
+        Assigns a account to a specified course
+        """
