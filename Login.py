@@ -28,17 +28,14 @@ class Login:
             print("Username or Password is Incorrect")
             return user
 
-        """
         hash = hashlib.new("md5")
-        entered_password = args[2].strip()
-        print(args[2])
-        hash.update(b"{entered_password}")
+        entered_password = args[2].rstrip()
+        hash.update(f"{entered_password}".encode("ascii"))
         hashed_password = hash.hexdigest()
 
         if account["password"] != hashed_password:
             print("User name or Password is Incorrect")
             return None
-        """
 
         self.database.set_logged_in(account["name"])
         print("Logged in successfully")
