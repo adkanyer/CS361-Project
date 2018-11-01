@@ -6,7 +6,6 @@ class CreateCourse(Command.Command):
         pass
 
     """
-    TestCommit
         args is a list containing the following:
             ["create_Course", name, instructor, tas, assignments]
     """
