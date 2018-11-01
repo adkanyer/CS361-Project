@@ -3,7 +3,7 @@ import TextFileInterface
 # create an instance of the UI
 ui = UI.UI()
 
-TextFileInterface.TextFileInterface().create_account("Tyler", "1234", "supervisor")
+TextFileInterface.TextFileInterface().create_account("tyler", "a", "supervisor")
 # create a user to determine if someone is logged onto the system
 # if CurrentUser is none: no one is logged on
 # if CurrentUser is not None, someone is logged on.
