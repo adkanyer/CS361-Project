@@ -14,7 +14,7 @@ class UI(object):
         "logout": Logout.Logout(),
         "create_account": CreateAccount.CreateAccount(),
         "delete_account": DeleteAccount.DeleteAccount(),
-        "create_course": CreateCourse.CreateCourse()
+        "create_course": CreateCourse.CreateCourse(),
         "assign_course": AssignCourse.AssignCourse()
     }
 
