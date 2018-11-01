@@ -7,7 +7,7 @@ class CreateCourse(Command.Command):
 
     """
         args is a list containing the following:
-            ["create_Course", name, number]
+            ["create_Course", course_number, course_name,]
     """
     def action(self, args):
         print("Create Course command entered.")
