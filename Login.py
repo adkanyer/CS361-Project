@@ -21,6 +21,7 @@ class Login:
         for i in user_list:
             if i["name"] is args[1]:
                 user = i
+                break
 
         hash = hashlib.new("md5")
         hash.update(b"args[2]")
