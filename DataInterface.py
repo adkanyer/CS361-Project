@@ -1,5 +1,4 @@
 class DataInterface:
-
     def create_account(self, account_name, password, role):
         pass
 
@@ -10,6 +9,9 @@ class DataInterface:
         pass
 
     def get_accounts(self):
+        pass
+
+    def get_logged_in(self):
         pass
 
     def set_logged_in(self, account_name):
