@@ -1,4 +1,7 @@
-class CreateAccount:
+import Command
+
+
+class CreateAccount(Command.Command):
     def __init__(self):
         pass
 
