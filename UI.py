@@ -5,18 +5,13 @@ import DeleteAccount
 
 
 class UI(object):
-    # instantiate and instance of each command type
-    login = Login.Login()
-    logout = Logout.Logout()
-    create_account = CreateAccount.CreateAccount()
-    delete_account = DeleteAccount.DeleteAccount()
-
+    
     # dictionary matching strings to commands
     commands = {
-        "login": login,
-        "logout": logout,
-        "create_account": create_account,
-        "delete_account": delete_account
+        "login": Login.Login(),
+        "logout": Logout.Logout(),
+        "create_account": CreateAccount.CreateAccount(),
+        "delete_account": DeleteAccount.DeleteAccount()
     }
 
     def __init__(self):
