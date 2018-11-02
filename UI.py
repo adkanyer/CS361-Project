@@ -13,7 +13,7 @@ class UI(object):
     commands = {
         "login": Login.Login(database),
         "logout": Logout.Logout(database),
-        "create_account": CreateAccount.CreateAccount(),
+        "create_account": CreateAccount.CreateAccount(database),
         "delete_account": DeleteAccount.DeleteAccount(),
         "create_course": CreateCourse.CreateCourse(),
         "assign_course": AssignCourse.AssignCourse()

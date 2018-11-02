@@ -1,9 +1,9 @@
-import TextFileInterface
 import User
 import hashlib
+import Command
 
 
-class Login:
+class Login(Command.Command):
 
     def __init__(self, database):
         self.database = database
@@ -16,6 +16,7 @@ class Login:
         if user is not None:
             print("Someone else is logged in.")
             return user
+
         if len(args) != 3:
             print("Username or Password is Incorrect")
             return user

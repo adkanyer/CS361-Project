@@ -1,7 +1,8 @@
 import TextFileInterface
+import Command
 
 
-class Logout:
+class Logout(Command.Command):
     def __init__(self, database):
         self.database = database
 
