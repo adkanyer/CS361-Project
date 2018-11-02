@@ -13,7 +13,7 @@ class TextFileInterface(DataInterface.DataInterface):
 
     def create_account(self, account_name, password, role):
         hash = hashlib.new("md5")
-        hash.update(b"{password}")
+        hash.update(f"{password}".encode("ascii"))
         hashed_password = hash.hexdigest()
         account_file = open(self.account_filename, "a")
         account_file.write(f"{account_name}:{hashed_password}:{role}\n")
@@ -60,7 +60,7 @@ class TextFileInterface(DataInterface.DataInterface):
         login_file = open(self.login_filename, "w")
         login_file.close()
 
-    def create_course(self, course_number, course_name, ):
+    def create_course(self, course_number, course_name,):
         course_file = open(self.course_filename, "a")
         course_file.write(f"{course_number}:{course_name}\n")
         course_file.close()

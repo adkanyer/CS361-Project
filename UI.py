@@ -3,6 +3,8 @@ import Logout
 import CreateAccount
 import DeleteAccount
 import TextFileInterface
+import CreateCourse
+import AssignCourse
 
 class UI(object):
     # dictionary matching strings to commands
@@ -12,7 +14,9 @@ class UI(object):
         "login": Login.Login(database),
         "logout": Logout.Logout(database),
         "create_account": CreateAccount.CreateAccount(),
-        "delete_account": DeleteAccount.DeleteAccount()
+        "delete_account": DeleteAccount.DeleteAccount(),
+        "create_course": CreateCourse.CreateCourse(),
+        "assign_course": AssignCourse.AssignCourse()
     }
 
     def command(self, string, user):
