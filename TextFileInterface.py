@@ -6,7 +6,7 @@ class TextFileInterface(DataInterface.DataInterface):
     def __init__(self, account_file="TextDB/account.txt",
                  login_file="TextDB/login.txt",
                  course_file="TextDB/course.txt",
-                 course_assignment_file="TextDB/course_assingment.txt",
+                 course_assignment_file="TextDB/course_assignment.txt",
                  lab_file="TextDB/lab.txt",
                  lab_assignment_file="TextDB/lab_assignment.txt"):
 
