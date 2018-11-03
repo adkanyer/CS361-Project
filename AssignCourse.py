@@ -9,7 +9,7 @@ class AssignCourse(Command.Command):
         args is a list containing the following:
             ["assign_Course", courseId, accountId]
     """
-    def action(self, args):
+    def action(self, args, user):
         print("Assign Course command entered.")
         """
         Assigns a account to a specified course

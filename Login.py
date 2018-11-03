@@ -28,10 +28,10 @@ class Login:
             print("Username or Password is Incorrect")
             return user
 
-        hash = hashlib.new("md5")
+        h = hashlib.new("md5")
         entered_password = args[2].rstrip()
-        hash.update(f"{entered_password}".encode("ascii"))
-        hashed_password = hash.hexdigest()
+        h.update(f"{entered_password}".encode("ascii"))
+        hashed_password = h.hexdigest()
 
         if account["password"] != hashed_password:
             print("User name or Password is Incorrect")
