@@ -14,7 +14,7 @@ class CreateAccount(Command.Command):
             print("You must be logged in to perform this action.")
             return None
 
-        if user.get_role() is "instructor" or user.get_role() is "TA":
+        if user.get_role() not in ["supervisor", "administrator"]:
             print("Permission Denied")
             return user
 
@@ -22,7 +22,7 @@ class CreateAccount(Command.Command):
             print("Invalid Arguments")
             return user
 
-        if not self.isUnigueUser(args[2]):
+        if not self.isUniqueUser(args[2]):
             print("Username is already taken.")
             return user
 
@@ -35,7 +35,7 @@ class CreateAccount(Command.Command):
         print("Account Created Successfully")
         return user
 
-    def isUnigueUser(self, name):
+    def isUniqueUser(self, name):
         accounts = self.database.get_accounts()
         for account in accounts:
             if account["name"] == name:
@@ -44,10 +44,7 @@ class CreateAccount(Command.Command):
 
     def isValidRole(self, role):
         roles = ["supervisor", "administrator", "instructor", "TA"]
-        for item in roles:
-            if role == item:
-                return True
-        return False
+        return role in roles
 
 
 class DeleteAccount:

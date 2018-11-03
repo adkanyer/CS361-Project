@@ -33,11 +33,11 @@ class CreateCourse(Command.Command):
             print("Permission Denied")
             return user
 
-        if len(args) != 2:
+        if len(args) != 3:
             print("Invalid Arguments")
             return user
 
-        self.database.create_course(args[1], args[2],)
+        self.database.create_course(args[1], args[2])
 
         print("Course Created Successfully")
         return None
