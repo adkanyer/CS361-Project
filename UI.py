@@ -1,10 +1,6 @@
-import Login
-import Logout
-import CreateAccount
-import DeleteAccount
 import TextFileInterface
-import CreateCourse
-import AssignCourse
+from Components import AssignCourse, CreateAccount, CreateCourse, DeleteAccount, Login, Logout
+
 
 class UI(object):
     # dictionary matching strings to commands
@@ -15,7 +11,7 @@ class UI(object):
         "logout": Logout.Logout(database),
         "create_account": CreateAccount.CreateAccount(database),
         "delete_account": DeleteAccount.DeleteAccount(),
-        "create_course": CreateCourse.CreateCourse(),
+        "create_course": CreateCourse.CreateCourse(database),
         "assign_course": AssignCourse.AssignCourse()
     }
 

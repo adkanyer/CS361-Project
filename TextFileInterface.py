@@ -4,12 +4,12 @@ import hashlib
 
 class TextFileInterface(DataInterface.DataInterface):
     def __init__(self):
-        self.account_filename = "account.txt"
-        self.login_filename = "login.txt"
-        self.course_filename = "course.txt"
-        self.course_assignment_filename = "course_assignments.txt"
-        self.lab_filename = "lab.txt"
-        self.lab_assignment_filename = "lab_assignments.txt"
+        self.account_filename = "TextFileDatabase/account.txt"
+        self.login_filename = "TextFileDatabase/login.txt"
+        self.course_filename = "TextFileDatabase/course.txt"
+        self.course_assignment_filename = "TextFileDatabase/course_assignments.txt"
+        self.lab_filename = "TextFileDatabase/lab.txt"
+        self.lab_assignment_filename = "TextFileDatabase/lab_assignments.txt"
 
     def create_account(self, account_name, password, role):
         hash = hashlib.new("md5")

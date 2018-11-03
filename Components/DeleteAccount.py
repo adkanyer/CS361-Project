@@ -1,3 +1,6 @@
+import Command
+
+
 class DeleteAccount:
     def __init__(self):
         pass
