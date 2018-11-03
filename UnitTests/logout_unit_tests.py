@@ -1,5 +1,5 @@
 from unittest import TestCase
-from Logout import Logout
+from Components.Logout import Logout
 from TextFileInterface import TextFileInterface
 from User import User
 

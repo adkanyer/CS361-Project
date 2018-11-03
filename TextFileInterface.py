@@ -3,19 +3,19 @@ import hashlib
 
 
 class TextFileInterface(DataInterface.DataInterface):
-    def __init__(self, account_filename="account.txt",
-                 login_filename="login.txt",
-                 course_filename="course.txt",
-                 course_assignment_filename="course_assingment.txt",
-                 lab_filename="lab.txt",
-                 lab_assignment_filename="lab_assignment.txt"):
+    def __init__(self, account_file="TextDB/account.txt",
+                 login_file="TextDB/login.txt",
+                 course_file="TextDB/course.txt",
+		 course_assignment_file="TextDB/course_assingment.txt",
+                 lab_file="TextDB/lab.txt",
+                 lab_assignment_file="TextDB/lab_assignment.txt"):
 
-        self.account_filename = account_filename
-        self.login_filename = login_filename
-        self.course_filename = course_filename
-        self.course_assignment_filename = course_assignment_filename
-        self.lab_filename = lab_filename
-        self.lab_assignment_filename = lab_assignment_filename
+        self.account_filename = account_file
+        self.login_filename = login_file
+        self.course_filename = course_file
+        self.course_assignment_filename = course_assignment_file
+        self.lab_filename = lab_file
+        self.lab_assignment_filename = lab_assignment_file
 
     def create_account(self, account_name, password, role):
         h = hashlib.new("md5")

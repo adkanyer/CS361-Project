@@ -1,5 +1,5 @@
 from unittest import TestCase
-from Login import Login
+from Components.Login import Login
 from TextFileInterface import TextFileInterface
 from User import User
 
