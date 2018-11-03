@@ -3,18 +3,24 @@ import hashlib
 
 
 class TextFileInterface(DataInterface.DataInterface):
-    def __init__(self):
-        self.account_filename = "TextFileDatabase/account.txt"
-        self.login_filename = "TextFileDatabase/login.txt"
-        self.course_filename = "TextFileDatabase/course.txt"
-        self.course_assignment_filename = "TextFileDatabase/course_assignments.txt"
-        self.lab_filename = "TextFileDatabase/lab.txt"
-        self.lab_assignment_filename = "TextFileDatabase/lab_assignments.txt"
+    def __init__(self, account_file="TextDB/account.txt",
+                 login_file="TextDB/login.txt",
+                 course_file="TextDB/course.txt",
+		 course_assignment_file="TextDB/course_assingment.txt",
+                 lab_file="TextDB/lab.txt",
+                 lab_assignment_file="TextDB/lab_assignment.txt"):
+
+        self.account_filename = account_file
+        self.login_filename = login_file
+        self.course_filename = course_file
+        self.course_assignment_filename = course_assignment_file
+        self.lab_filename = lab_file
+        self.lab_assignment_filename = lab_assignment_file
 
     def create_account(self, account_name, password, role):
-        hash = hashlib.new("md5")
-        hash.update(f"{password}".encode("ascii"))
-        hashed_password = hash.hexdigest()
+        h = hashlib.new("md5")
+        h.update(f"{password}".encode("ascii"))
+        hashed_password = h.hexdigest()
         account_file = open(self.account_filename, "a")
         account_file.write(f"{account_name}:{hashed_password}:{role}\n")
         account_file.close()

@@ -1,6 +1,10 @@
 import UI
 import TextFileInterface
 
+# create a user to determine if someone is logged onto the system
+# if CurrentUser is none: no one is logged on
+# if CurrentUser is not None, someone is logged on.
+currentUser = None
 
 class Main:
     # create an instance of the UI

@@ -9,10 +9,10 @@ class UI(object):
     commands = {
         "login": Login.Login(database),
         "logout": Logout.Logout(database),
-        "create_account": CreateAccount.CreateAccount(database),
-        "delete_account": DeleteAccount.DeleteAccount(),
-        "create_course": CreateCourse.CreateCourse(database),
-        "assign_course": AssignCourse.AssignCourse()
+        "create_account": AccountCommands.CreateAccount(database),
+        "delete_account": AccountCommands.DeleteAccount(database),
+        "create_course": CourseCommands.CreateCourse(database),
+        "assign_course": CourseCommands.AssignCourse(database)
     }
 
     def command(self, string, user):
