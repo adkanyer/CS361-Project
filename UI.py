@@ -1,5 +1,5 @@
 import TextFileInterface
-from Components import AssignCourse, CreateAccount, CreateCourse, DeleteAccount, Login, Logout
+from Components import CourseCommands, AccountCommands, Login, Logout
 
 
 class UI(object):
