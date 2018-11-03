@@ -29,8 +29,14 @@ class DataInterface:
     def set_course_assignment(self, course_number, instructor_name):
         pass
 
+    def get_course_assignments(self):
+        pass
+
     def get_labs(self):
         pass
 
     def set_lab_assignment(self, course_number, lab_number, ta_name):
+        pass
+
+    def get_lab_assignments(self):
         pass

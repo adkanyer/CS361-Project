@@ -22,11 +22,11 @@ class CreateAccount(Command.Command):
             print("Invalid Arguments")
             return
 
-        if not self.isUniqueUser(args[2]):
+        if self.get_user(args[2]) is not None:
             print("Username is already taken.")
             return
 
-        if not self.isValidRole(args[3]):
+        if not self.is_valid_role(args[3]):
             print("Invalid Role")
             return
 
@@ -34,17 +34,6 @@ class CreateAccount(Command.Command):
 
         print("Account Created Successfully")
         return
-
-    def isUniqueUser(self, name):
-        accounts = self.environment.database.get_accounts()
-        for account in accounts:
-            if account["name"] == name:
-                return False
-        return True
-
-    def isValidRole(self, role):
-        roles = ["supervisor", "administrator", "instructor", "TA"]
-        return role in roles
 
 
 class DeleteAccount(Command.Command):
@@ -60,4 +49,13 @@ class DeleteAccount(Command.Command):
             "Print you must be logged in to perform this action."
             return
 
-        print("Delete Account command entered")
+        if self.environment.user.get_role() not in ["administrator", "supervisor"]:
+            print("Permission denied")
+            return
+
+        if self.get_user(args[1]) is None:
+            print("User to delete doesn't exist")
+            return
+
+        self.environment.database.delete_account(args[1])
+        print("Account deleted successfully")
