@@ -1,13 +1,14 @@
 import TextFileInterface
+import Command
 
 
-class Logout:
+class Logout(Command.Command):
     def __init__(self, database):
         self.database = database
 
     """
         args is a list containing the following:
-           ["logout", "username"]
+           ["logout"]
     """
     def action(self, args, user):
         if user is None:
