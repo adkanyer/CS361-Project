@@ -2,8 +2,8 @@ import Command
 
 
 class AssignCourse(Command.Command):
-    def __init__(self):
-        pass
+    def __init__(self, database):
+        self.database = database
 
     """
         args is a list containing the following:

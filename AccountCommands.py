@@ -1,5 +1,6 @@
 import Command
 
+
 class CreateAccount(Command.Command):
 
     def __init__(self, database):
