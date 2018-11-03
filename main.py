@@ -1,14 +1,14 @@
-import UI
-# import TextFileInterface
+import UI, Environment
+import TextFileInterface
 
 # create an instance of the UI
-ui = UI.UI()
+environment = Environment.Environment(TextFileInterface.TextFileInterface())
+ui = UI.UI(environment)
 
 # TextFileInterface.TextFileInterface().create_account("tyler", "a", "supervisor")
 # create a user to determine if someone is logged onto the system
 # if CurrentUser is none: no one is logged on
 # if CurrentUser is not None, someone is logged on.
-currentUser = None
 
 # set application to running
 running = True
@@ -20,7 +20,7 @@ while running:
         running = False
     else:
         # take input and attempt to change into a command
-        currentUser = ui.command(s, currentUser)
+        currentUser = ui.command(s)
 
 print("Program has been terminated.")
 
