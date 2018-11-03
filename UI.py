@@ -1,8 +1,6 @@
-import Login
-import Logout
-import AccountCommands
 import TextFileInterface
-import CourseCommands
+from Components import AssignCourse, CreateAccount, CreateCourse, DeleteAccount, Login, Logout
+
 
 class UI(object):
     # dictionary matching strings to commands
