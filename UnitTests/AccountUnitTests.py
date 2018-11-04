@@ -4,7 +4,7 @@ from Components.AccountCommands import CreateAccount, DeleteAccount
 from Environment import Environment
 
 
-class Create_Account_Unit_Tests(unittest.TestCase):
+class CreateAccountUnitTests(unittest.TestCase):
 
     def setUp(self):
         self.environment = Environment(TextFileInterface())
