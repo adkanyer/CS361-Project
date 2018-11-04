@@ -130,6 +130,7 @@ class TextFileInterface(DataInterface.DataInterface):
         assignments = []
         lab_file = open(self.lab_assignment_filename, "r")
         lines = lab_file.readlines()
+        lab_file.close()
         for line in lines:
             fields = line.split(":")
             if len(fields) != 3:

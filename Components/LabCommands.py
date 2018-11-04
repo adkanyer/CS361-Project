@@ -9,29 +9,33 @@ class CreateLab(Command.Command):
             ["create_lab", course_number, lab_number]
     """
     def action(self, args):
-        if self.environment.user is None:
-            print("You must be logged in to perform this action.")
-            return
+        SUCCESS_MESSAGE = "Lab created."
+        FAILURE_MESSAGE = "Error creating lab."
 
-        if self.environment.user.get_role() not in ["instructor", "supervisor", "admin"]:
-            print("Permission Denied")
-            return
+        if self.environment.user is None:
+            self.environment.debug("You must be logged in to perform this action.")
+            return FAILURE_MESSAGE
+
+        if self.environment.user.get_role() not in ["instructor", "supervisor", "administrator"]:
+            self.environment.debug("Permission Denied")
+            return FAILURE_MESSAGE
 
         if len(args) != 3:
-            print("Invalid Arguments")
-            return
+            self.environment.debug("Invalid Arguments")
+            return FAILURE_MESSAGE
+
         course_num = args[1]
         lab_num = args[2]
         if not self.course_exists(course_num):
-            print("Course does not exist")
-            return
+            self.environment.debug("Course does not exist")
+            return FAILURE_MESSAGE
 
         if self.lab_exists(course_num, lab_num):
-            print("Lab already exists")
-            return
+            self.environment.debug("Lab already exists")
+            return FAILURE_MESSAGE
+
         self.environment.database.create_lab(course_num, lab_num)
-        print("Lab created successfully")
-        return
+        return SUCCESS_MESSAGE
 
 
 class AssignLab(Command.Command):
@@ -54,18 +58,20 @@ class AssignLab(Command.Command):
             self.environment.debug("You must be logged in to perform this action.")
             return FAILURE_MESSAGE
 
-        if self.environment.user.get_role() not in ["instructor", "supervisor", "admin"]:
+        if self.environment.user.get_role() not in ["instructor", "supervisor", "administrator"]:
             self.environment.debug("Permission Denied")
             return FAILURE_MESSAGE
 
         if len(args) != 4:
             self.environment.debug("Invalid Arguments")
             return FAILURE_MESSAGE
+
         course_num = args[1]
         lab_num = args[2]
         if not self.lab_exists(course_num, lab_num):
             self.environment.debug("Lab does not exist")
             return FAILURE_MESSAGE
+
         if self.lab_assigned(course_num, lab_num):
             self.environment.debug("Lab already assigned to a TA")
             return FAILURE_MESSAGE
