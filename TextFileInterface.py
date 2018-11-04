@@ -3,19 +3,31 @@ import hashlib
 
 
 class TextFileInterface(DataInterface.DataInterface):
-    def __init__(self, account_file="TextDB/account.txt",
-                 login_file="TextDB/login.txt",
-                 course_file="TextDB/course.txt",
-                 course_assignment_file="TextDB/course_assignment.txt",
-                 lab_file="TextDB/lab.txt",
-                 lab_assignment_file="TextDB/lab_assignment.txt"):
+    def __init__(self, account_file="account.txt",
+                 login_file="login.txt",
+                 course_file="course.txt",
+                 course_assignment_file="course_assignment.txt",
+                 lab_file="lab.txt",
+                 lab_assignment_file="lab_assignment.txt",
+                 relative_directory="TextDB/"):
 
-        self.account_filename = account_file
-        self.login_filename = login_file
-        self.course_filename = course_file
-        self.course_assignment_filename = course_assignment_file
-        self.lab_filename = lab_file
-        self.lab_assignment_filename = lab_assignment_file
+        self.account_filename = f"{relative_directory}/{account_file}"
+        self.login_filename = f"{relative_directory}/{login_file}"
+        self.course_filename = f"{relative_directory}/{course_file}"
+        self.course_assignment_filename = f"{relative_directory}/{course_assignment_file}"
+        self.lab_filename = f"{relative_directory}/{lab_file}"
+        self.lab_assignment_filename = f"{relative_directory}/{lab_assignment_file}"
+
+    def clear_database(self):
+        dbfiles = [self.account_filename,
+                   self.course_filename,
+                   self.course_assignment_filename,
+                   self.login_filename,
+                   self.lab_filename,
+                   self.lab_assignment_filename
+                   ]
+        for file in dbfiles:
+            open(file, "w").close()
 
     def create_account(self, account_name, password, role):
         h = hashlib.new("md5")
