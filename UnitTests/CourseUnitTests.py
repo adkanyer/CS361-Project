@@ -60,3 +60,18 @@ class CreateCourseUnitTests(unittest.TestCase):
 
         self.assertEqual(response, "Error creating course.")
 
+    def test_create_account_not_enough_args(self):
+        self.environment.user = User("root", "supervisor")
+
+        create_course = CreateCourse(self.environment)
+        response = create_course.action(["create_course"])
+
+        self.assertEqual(response, "Error creating course.")
+
+        course_id = "1"
+
+        response = create_course.action(["create_course", course_id])
+
+        self.assertEqual(response, "Error creating course.")
+        self.assertIsNone(create_course.course_exists(course_id))
+
