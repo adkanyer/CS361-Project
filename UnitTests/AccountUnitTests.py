@@ -9,7 +9,7 @@ class CreateAccountUnitTests(unittest.TestCase):
 
     def setUp(self):
         tfi = TextFileInterface(relative_directory="TestDB/")
-        self.environment = Environment(tfi, DEBUG=True)
+        self.environment = Environment(tfi)
         self.environment.database.clear_database()
         self.environment.database.create_account("root", "root", "administrator")
 
@@ -50,12 +50,32 @@ class CreateAccountUnitTests(unittest.TestCase):
 
         self.assertEqual(response, "Error creating account.")
 
+    def test_create_account_not_enough_args(self):
+        self.environment.user = User("root", "administrator")
+
+        create_account = CreateAccount(self.environment)
+        user_name = "new_user"
+        response = create_account.action(["create_account", user_name, "password"])
+
+        self.assertEqual(response, "Error creating account.")
+        self.assertIsNone(create_account.get_user(user_name))
+
+    def test_create_account_invalid_role(self):
+        self.environment.user = User("root", "administrator")
+
+        create_account = CreateAccount(self.environment)
+        user_name = "new_user"
+        response = create_account.action(["create_account", user_name, "password", "invalid_role"])
+
+        self.assertEqual(response, "Error creating account.")
+        self.assertIsNone(create_account.get_user(user_name))
+
 
 class DeleteAccountUnitTests(unittest.TestCase):
 
     def setUp(self):
         tfi = TextFileInterface(relative_directory="TestDB/")
-        self.environment = Environment(tfi, DEBUG=True)
+        self.environment = Environment(tfi)
         self.environment.database.clear_database()
         self.environment.database.create_account("root", "root", "administrator")
 
@@ -91,6 +111,16 @@ class DeleteAccountUnitTests(unittest.TestCase):
         self.assertEqual(response, "Error deleting account.")
         self.assertIsNotNone(delete_command.get_user(user_name))
 
+    def test_delete_account_not_logged_in(self):
+        user_name = "existing_account"
+        self.environment.database.create_account(user_name, "password", "TA")
+
+        delete_command = DeleteAccount(self.environment)
+        response = delete_command.action(["delete_account", user_name])
+
+        self.assertEqual(response, "Error deleting account.")
+        self.assertIsNotNone(delete_command.get_user(user_name))
+
     def test_delete_account_no_args(self):
         self.environment.user = User("root", "administrator")
         user_name = "existing_account"
@@ -106,7 +136,7 @@ class DeleteAccountUnitTests(unittest.TestCase):
 class ViewAccountsUnitTests(unittest.TestCase):
     def setUp(self):
         tfi = TextFileInterface(relative_directory="TestDB/")
-        self.environment = Environment(tfi, DEBUG=True)
+        self.environment = Environment(tfi)
         self.environment.database.clear_database()
 
     def test_view_accounts_none_in_database(self):

@@ -2,7 +2,7 @@ from unittest import TestCase
 from Components.Logout import Logout
 from TextFileInterface import TextFileInterface
 from Environment import Environment
-
+from User import User
 
 class LogoutUnitTests(TestCase):
     def setUp(self):
@@ -12,7 +12,7 @@ class LogoutUnitTests(TestCase):
         self.environment.database.create_account("root", "root", "administrator")
 
     def test_successful_logout(self):
-        self.environment.database.set_logged_in("root")
+        self.environment.user = User("root", "administrator")
         logout = Logout(self.environment)
         user = logout.action(["logout"])
         self.assertIsNone(self.environment.user)

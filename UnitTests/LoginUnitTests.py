@@ -23,9 +23,13 @@ class LoginUnitTests(TestCase):
         self.assertIsNone(self.environment.user)
 
     def test_already_logged_in(self):
+        self.environment.user = User("someone_else", "supervisor")
+
         self.environment.database.create_account("testuser", "1234", "supervisor")
         login = Login(self.environment)
-        login.action(["login", "testuser", "1234"])
+        response = login.action(["login", "testuser", "1234"])
+
+        self.assertEqual(response, "Error logging in.")
         self.assertIsNotNone(self.environment.user)
 
     def test_wrong_username(self):
