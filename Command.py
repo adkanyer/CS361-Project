@@ -20,7 +20,7 @@ class Command(abc.ABC):
     def course_exists(self, course_number):
         courses = self.environment.database.get_courses()
         for course in courses:
-            if course["number"] == course_number:
+            if course["number"] == str(course_number):
                 return True
         return False
 
@@ -34,7 +34,7 @@ class Command(abc.ABC):
     def lab_exists(self, course_number, lab_number):
         labs = self.environment.database.get_labs()
         for lab in labs:
-            if lab["course_number"] == course_number and lab["lab_number"] == lab_number:
+            if lab["course_number"] == str(course_number) and lab["lab_number"] == str(lab_number):
                 return True
         return False
 

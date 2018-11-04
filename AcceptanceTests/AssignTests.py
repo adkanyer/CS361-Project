@@ -96,7 +96,7 @@ class AssignTests(unittest.TestCase):
     def test_assign_lab(self):
         # Command: "assign_lab 361 801 TA", expect success
         self.ui.command("login Supervisor SupervisorPassword")
-        self.assertEqual(self.ui.command("assign_lab TA 361 801"), "Assigned to class.")
+        self.assertEqual(self.ui.command("assign_lab TA 361 801"), "Assigned to lab.")
 
     def test_assign_lab_no_class(self):
         # Command: "assign_lab TA", expect failure (no class or lab given)
