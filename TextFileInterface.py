@@ -3,19 +3,31 @@ import hashlib
 
 
 class TextFileInterface(DataInterface.DataInterface):
-    def __init__(self, account_filename="account.txt",
-                 login_filename="login.txt",
-                 course_filename="course.txt",
-                 course_assignment_filename="course_assingment.txt",
-                 lab_filename="lab.txt",
-                 lab_assignment_filename="lab_assignment.txt"):
+    def __init__(self, account_file="account.txt",
+                 login_file="login.txt",
+                 course_file="course.txt",
+                 course_assignment_file="course_assignment.txt",
+                 lab_file="lab.txt",
+                 lab_assignment_file="lab_assignment.txt",
+                 relative_directory="TextDB/"):
 
-        self.account_filename = account_filename
-        self.login_filename = login_filename
-        self.course_filename = course_filename
-        self.course_assignment_filename = course_assignment_filename
-        self.lab_filename = lab_filename
-        self.lab_assignment_filename = lab_assignment_filename
+        self.account_filename = f"{relative_directory}/{account_file}"
+        self.login_filename = f"{relative_directory}/{login_file}"
+        self.course_filename = f"{relative_directory}/{course_file}"
+        self.course_assignment_filename = f"{relative_directory}/{course_assignment_file}"
+        self.lab_filename = f"{relative_directory}/{lab_file}"
+        self.lab_assignment_filename = f"{relative_directory}/{lab_assignment_file}"
+
+    def clear_database(self):
+        dbfiles = [self.account_filename,
+                   self.course_filename,
+                   self.course_assignment_filename,
+                   self.login_filename,
+                   self.lab_filename,
+                   self.lab_assignment_filename
+                   ]
+        for file in dbfiles:
+            open(file, "w").close()
 
     def create_account(self, account_name, password, role):
         h = hashlib.new("md5")
@@ -86,6 +98,19 @@ class TextFileInterface(DataInterface.DataInterface):
         course_assignment_file.write(f"{course_number}:{instructor_name}\n")
         course_assignment_file.close()
 
+    def get_course_assignments(self):
+        assignments = []
+        course_assignment_file = open(self.course_assignment_filename, "r")
+        for line in course_assignment_file.readlines():
+            fields = line.split(":")
+            assignments.append({"course_number": fields[0], "instructor_name": fields[1].rstrip()})
+        return assignments
+
+    def create_lab(self, course_number, lab_number):
+        lab_file = open(self.lab_filename, "a")
+        lab_file.write(f"{course_number}:{lab_number}\n")
+        lab_file.close()
+
     def get_labs(self):
         labs = []
         lab_file = open(self.lab_filename, "r")
@@ -93,11 +118,24 @@ class TextFileInterface(DataInterface.DataInterface):
         lab_file.close()
         for line in lines:
             fields = line.split(":")
-            labs.append({"course_number": fields[0], "lab_number": fields[1], "ta_name": fields[2].rstrip()})
+            labs.append({"course_number": fields[0], "lab_number": fields[1].rstrip()})
         return labs
 
     def set_lab_assignment(self, course_number, lab_number, ta_name):
-        lab_file = open(self.lab_filename, "a")
+        lab_file = open(self.lab_assignment_filename, "a")
         lab_file.write(f"{course_number}:{lab_number}:{ta_name}\n")
         lab_file.close()
 
+    def get_lab_assignments(self):
+        assignments = []
+        lab_file = open(self.lab_assignment_filename, "r")
+        lines = lab_file.readlines()
+        for line in lines:
+            fields = line.split(":")
+            if len(fields) != 3:
+                break
+            course_number = fields[0]
+            lab_number = fields[1]
+            ta_name = fields[2].rstrip()
+            assignments.append({"course_number": course_number, "lab_number": lab_number, "ta_name": ta_name})
+        return assignments
