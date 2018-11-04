@@ -11,6 +11,7 @@ class UI:
             "logout": Logout.Logout(self.environment),
             "create_account": AccountCommands.CreateAccount(self.environment),
             "delete_account": AccountCommands.DeleteAccount(self.environment),
+            "view_accounts": AccountCommands.ViewAccounts(self.environment),
             "create_course": CourseCommands.CreateCourse(self.environment),
             "assign_course": CourseCommands.AssignCourse(self.environment),
             "create_lab": LabCommands.CreateLab(self.environment),

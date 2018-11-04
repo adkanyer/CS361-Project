@@ -11,7 +11,6 @@ class LoginUnitTests(TestCase):
         self.environment = Environment(tfi)
         self.environment.database.clear_database()
         self.environment.database.create_account("root", "root", "administrator")
-        self.environment.database.set_logged_in("root")
 
     def test_not_enough_args(self):
         login = Login(self.environment)
