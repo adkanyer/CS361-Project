@@ -5,23 +5,26 @@ import Command
 
 class Login(Command.Command):
 
-    def __init__(self, database):
-        self.database = database
+    def __init__(self, environment):
+        self.environment = environment
 
     """
         args is a list containing the following:
             ["login", <username>, <password>]
     """
-    def action(self, args, user):
-        if user is not None:
-            print("Someone else is logged in.")
-            return user
+    def action(self, args):
+        SUCCESS_MESSAGE = "Logged in."
+        FAILURE_MESSAGE = "Error logging in."
+
+        if self.environment.user is not None:
+            self.environment.debug("Someone else is logged in.")
+            return FAILURE_MESSAGE
 
         if len(args) != 3:
-            print("Username or Password is Incorrect")
-            return user
+            self.environment.debug("Username or Password is Incorrect")
+            return FAILURE_MESSAGE
 
-        user_list = self.database.get_accounts()
+        user_list = self.environment.database.get_accounts()
 
         account = {}
 
@@ -30,8 +33,8 @@ class Login(Command.Command):
                 account = i
 
         if len(account) == 0:
-            print("Username or Password is Incorrect")
-            return user
+            self.environment.debug("Username or Password is Incorrect")
+            return FAILURE_MESSAGE
 
         h = hashlib.new("md5")
         entered_password = args[2].rstrip()
@@ -39,9 +42,10 @@ class Login(Command.Command):
         hashed_password = h.hexdigest()
 
         if account["password"] != hashed_password:
-            print("User name or Password is Incorrect")
-            return None
+            self.environment.debug("User name or Password is Incorrect")
+            return FAILURE_MESSAGE
 
-        self.database.set_logged_in(account["name"])
-        print("Logged in successfully")
-        return User.User(account["name"], account["role"])
+        self.environment.database.set_logged_in(account["name"])
+        self.environment.user = User.User(account["name"], account["role"])
+        self.environment.debug("Logged in successfully")
+        return SUCCESS_MESSAGE

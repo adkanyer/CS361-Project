@@ -1,20 +1,23 @@
-import TextFileInterface
 import Command
 
 
 class Logout(Command.Command):
-    def __init__(self, database):
-        self.database = database
+    def __init__(self, environment):
+        self.environment = environment
 
     """
         args is a list containing the following:
            ["logout"]
     """
-    def action(self, args, user):
-        if user is None:
-            print("No user is logged in.")
-            return None
+    def action(self, args):
+        SUCCESS_MESSAGE = "Logged out."
+        FAILURE_MESSAGE = "Error logging out."
 
-        self.database.set_logged_out()
-        print("Logout Successful.")
-        return None
+        if self.environment.user is None:
+            self.environment.debug("No user is logged in.")
+            return FAILURE_MESSAGE
+
+        self.environment.database.set_logged_out()
+        self.environment.user = None
+        self.environment.debug("Logged out Successful.")
+        return SUCCESS_MESSAGE
