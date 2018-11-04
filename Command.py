@@ -2,8 +2,9 @@ import abc
 import User
 
 
-
 class Command(abc.ABC):
+    def __init__(self, environment):
+        self.environment = environment
 
     @abc.abstractmethod
     def action(self, args):
@@ -27,6 +28,20 @@ class Command(abc.ABC):
         course_assignments = self.environment.database.get_course_assignments()
         for assignment in course_assignments:
             if assignment["course_number"] == course_number:
+                return True
+        return False
+
+    def lab_exists(self, course_number, lab_number):
+        labs = self.environment.database.get_labs()
+        for lab in labs:
+            if lab["course_number"] == course_number and lab["lab_number"] == lab_number:
+                return True
+        return False
+
+    def lab_assigned(self, course_number, lab_number):
+        lab_assignments = self.environment.database.get_lab_assignments()
+        for assignment in lab_assignments:
+            if assignment["course_number"] == course_number and assignment["lab_number"] == lab_number:
                 return True
         return False
 

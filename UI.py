@@ -1,5 +1,5 @@
 import TextFileInterface
-from Components import CourseCommands, AccountCommands, Login, Logout
+from Components import LabCommands, CourseCommands, AccountCommands, Login, Logout
 
 
 class UI:
@@ -12,7 +12,9 @@ class UI:
             "create_account": AccountCommands.CreateAccount(self.environment),
             "delete_account": AccountCommands.DeleteAccount(self.environment),
             "create_course": CourseCommands.CreateCourse(self.environment),
-            "assign_course": CourseCommands.AssignCourse(self.environment)
+            "assign_course": CourseCommands.AssignCourse(self.environment),
+            "create_lab": LabCommands.CreateLab(self.environment),
+            "assign_lab": LabCommands.AssignLab(self.environment)
         }
 
     def command(self, string):

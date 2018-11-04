@@ -94,6 +94,11 @@ class TextFileInterface(DataInterface.DataInterface):
             assignments.append({"course_number": fields[0], "instructor_name": fields[1].rstrip()})
         return assignments
 
+    def create_lab(self, course_number, lab_number):
+        lab_file = open(self.lab_filename, "a")
+        lab_file.write(f"{course_number}:{lab_number}\n")
+        lab_file.close()
+
     def get_labs(self):
         labs = []
         lab_file = open(self.lab_filename, "r")
@@ -101,7 +106,7 @@ class TextFileInterface(DataInterface.DataInterface):
         lab_file.close()
         for line in lines:
             fields = line.split(":")
-            labs.append({"course_number": fields[0], "lab_number": fields[1], "ta_name": fields[2].rstrip()})
+            labs.append({"course_number": fields[0], "lab_number": fields[1].rstrip()})
         return labs
 
     def set_lab_assignment(self, course_number, lab_number, ta_name):
@@ -115,4 +120,10 @@ class TextFileInterface(DataInterface.DataInterface):
         lines = lab_file.readlines()
         for line in lines:
             fields = line.split(":")
-            assignments.append({"lab_number": fields[0], "ta_name": fields[1].rstrip()})
+            if len(fields) != 3:
+                break
+            course_number = fields[0]
+            lab_number = fields[1]
+            ta_name = fields[2].rstrip()
+            assignments.append({"course_number": course_number, "lab_number": lab_number, "ta_name": ta_name})
+        return assignments

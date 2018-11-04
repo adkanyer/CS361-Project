@@ -1,4 +1,4 @@
-import Command, User
+import Command
 
 
 class AssignCourse(Command.Command):
