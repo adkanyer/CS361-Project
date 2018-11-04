@@ -47,35 +47,38 @@ class AssignLab(Command.Command):
         """
         Assigns a TA to a specified lab section
         """
+        SUCCESS_MESSAGE = "Assigned to lab."
+        FAILURE_MESSAGE = "Error assigning to lab."
+
         if self.environment.user is None:
-            print("You must be logged in to perform this action.")
-            return
+            self.environment.debug("You must be logged in to perform this action.")
+            return FAILURE_MESSAGE
 
         if self.environment.user.get_role() not in ["instructor", "supervisor", "admin"]:
-            print("Permission Denied")
-            return
+            self.environment.debug("Permission Denied")
+            return FAILURE_MESSAGE
 
         if len(args) != 4:
-            print("Invalid Arguments")
-            return
+            self.environment.debug("Invalid Arguments")
+            return FAILURE_MESSAGE
         course_num = args[1]
         lab_num = args[2]
         if not self.lab_exists(course_num, lab_num):
-            print("Lab does not exist")
-            return
+            self.environment.debug("Lab does not exist")
+            return FAILURE_MESSAGE
         if self.lab_assigned(course_num, lab_num):
-            print("Lab already assigned to a TA")
-            return
+            self.environment.debug("Lab already assigned to a TA")
+            return FAILURE_MESSAGE
 
         ta = self.get_user(args[3])
         if ta is None:
-            print("Instructor for course does not exist")
-            return
+            self.environment.debug("Instructor for course does not exist")
+            return FAILURE_MESSAGE
 
         if ta.get_role() != "TA":
-            print("Instructor for course is not an instructor")
-            return
+            self.environment.debug("Instructor for course is not an instructor")
+            return FAILURE_MESSAGE
 
         self.environment.database.set_lab_assignment(args[1], args[2], args[3])
-        print("Lab assigned successfully")
-        return
+        self.environment.debug("Lab assigned successfully")
+        return SUCCESS_MESSAGE

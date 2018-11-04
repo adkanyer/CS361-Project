@@ -28,7 +28,7 @@ class UI:
         if args[0] in valid_args:
             return self.commands[args[0]].action(args)
         else:
-            print("Invalid Command")
+            return "Invalid Command"
 
     # input: command of type string
     # return: list of command separated by spaces

@@ -5,3 +5,4 @@
 417:Test
 888:newtest
 361:system
+100:DumbClass

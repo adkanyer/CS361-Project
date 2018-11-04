@@ -15,15 +15,15 @@ class LogoutUnitTests(TestCase):
         self.environment.database.set_logged_in("root")
         logout = Logout(self.environment)
         user = logout.action(["logout"])
-        self.assertIsNone(user)
+        self.assertIsNone(self.environment.user)
 
     def test_not_logged_on(self):
         logout = Logout(self.environment)
         user = logout.action(["logout"])
-        self.assertIsNone(user)
+        self.assertIsNone(self.environment.user)
 
     def test_extra_args(self):
         self.environment.database.set_logged_in("root")
         logout = Logout(self.environment)
-        user = logout.action(["logout", "foo"])
-        self.assertIsNone(user)
+        logout.action(["logout", "foo"])
+        self.assertIsNone(self.environment.user)

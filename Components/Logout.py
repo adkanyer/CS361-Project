@@ -1,4 +1,3 @@
-import TextFileInterface
 import Command
 
 
@@ -11,11 +10,14 @@ class Logout(Command.Command):
            ["logout"]
     """
     def action(self, args):
+        SUCCESS_MESSAGE = "Logged out."
+        FAILURE_MESSAGE = "Error logging out."
+
         if self.environment.user is None:
-            print("No user is logged in.")
-            return
+            self.environment.debug("No user is logged in.")
+            return FAILURE_MESSAGE
 
         self.environment.database.set_logged_out()
         self.environment.user = None
-        print("Logout Successful.")
-        return
+        self.environment.debug("Logged out Successful.")
+        return SUCCESS_MESSAGE

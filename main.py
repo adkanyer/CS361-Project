@@ -2,7 +2,7 @@ import UI, Environment
 import TextFileInterface
 
 # create an instance of the UI
-environment = Environment.Environment(TextFileInterface.TextFileInterface())
+environment = Environment.Environment(TextFileInterface.TextFileInterface(), DEBUG=True)
 ui = UI.UI(environment)
 
 # TextFileInterface.TextFileInterface().create_account("tyler", "a", "supervisor")
@@ -20,7 +20,8 @@ while running:
         running = False
     else:
         # take input and attempt to change into a command
-        currentUser = ui.command(s)
+        response = ui.command(s)
+        print(response)
 
 print("Program has been terminated.")
 
