@@ -54,7 +54,16 @@ class CreateAccountUnitTests(unittest.TestCase):
         self.environment.user = User("root", "administrator")
 
         create_account = CreateAccount(self.environment)
+        response = create_account.action(["create_account"])
+
+        self.assertEqual(response, "Error creating account.")
+
         user_name = "new_user"
+        response = create_account.action(["create_account", user_name])
+
+        self.assertEqual(response, "Error creating account.")
+        self.assertIsNone(create_account.get_user(user_name))
+
         response = create_account.action(["create_account", user_name, "password"])
 
         self.assertEqual(response, "Error creating account.")
