@@ -73,9 +73,22 @@ class CreateCourse(Command.Command):
             self.environment.debug("Invalid Arguments")
             return FAILURE_MESSAGE
 
-        self.environment.database.create_course(args[1], args[2])
+        course_number = args[1]
+        course_name = args[2]
+
+        if self.course_exists(course_number):
+            self.environment.debug("Course already exists")
+            return FAILURE_MESSAGE
+
+        self.environment.database.create_course(course_number, course_name)
 
         self.environment.debug("Course Created Successfully")
         return SUCCESS_MESSAGE
 
 
+class ViewCourses(Command.Command):
+    def __init__(self, environment):
+        self.environment = environment
+
+    def action(self, args):
+        FAILURE_MESSAGE = "Error viewing courses"

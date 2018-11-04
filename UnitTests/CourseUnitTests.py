@@ -73,5 +73,12 @@ class CreateCourseUnitTests(unittest.TestCase):
         response = create_course.action(["create_course", course_id])
 
         self.assertEqual(response, "Error creating course.")
-        self.assertIsNone(create_course.course_exists(course_id))
+        self.assertFalse(create_course.course_exists(course_id))
+        
+class AssignCourseUnitTests(unittest.TestCase):
+    def setUp(self):
+        pass
 
+class ViewCoursesUnitTests(unittest.TestCase):
+    def setUp(self):
+        pass
