@@ -15,7 +15,8 @@ class UI:
             "create_course": CourseCommands.CreateCourse(self.environment),
             "assign_course": CourseCommands.AssignCourse(self.environment),
             "create_lab": LabCommands.CreateLab(self.environment),
-            "assign_lab": LabCommands.AssignLab(self.environment)
+            "assign_lab": LabCommands.AssignLab(self.environment),
+            "view_labs": LabCommands.ViewLabs(self.environment)
         }
 
     def command(self, string):

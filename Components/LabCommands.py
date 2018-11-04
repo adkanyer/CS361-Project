@@ -88,3 +88,34 @@ class AssignLab(Command.Command):
         self.environment.database.set_lab_assignment(args[1], args[2], args[3])
         self.environment.debug("Lab assigned successfully")
         return SUCCESS_MESSAGE
+
+
+class ViewLabs(Command.Command):
+    def __init__(self, environment):
+        self.environment = environment
+
+    def action(self, args):
+        result = ""
+        FAILURE_MESSAGE = "Error viewing labs."
+
+        if self.environment.user is None:
+            self.environment.debug("You must be logged in to perform this action.")
+            return FAILURE_MESSAGE
+
+        if self.environment.user.get_role() not in ["TA", "instructor", "administrator", "supervisor"]:
+            self.environment.debug("Permission denied.")
+            return FAILURE_MESSAGE
+
+        if len(args) != 1:
+            self.environment.debug("Invalid arguments.")
+            return FAILURE_MESSAGE
+
+        labs = self.environment.database.get_labs()
+        lab_assignemnts = self.environment.database.get_lab_assignments()
+        for lab in labs:
+            result += f"{lab['course_number']} {lab['lab_number']}"
+            for lab_assignment in lab_assignemnts:
+                if lab["course_number"] == lab_assignment["course_number"] and lab["lab_number"] == lab_assignment["lab_number"]:
+                    result += f" {lab_assignment['ta_name']}"
+            result += "\n"
+        return result

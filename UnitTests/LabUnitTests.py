@@ -1,6 +1,6 @@
 import unittest
 from TextFileInterface import TextFileInterface
-from Components.LabCommands import CreateLab, AssignLab
+from Components.LabCommands import CreateLab, AssignLab, ViewLabs
 from Environment import Environment
 from User import User
 
@@ -177,3 +177,50 @@ class AssignLabUnitTests(unittest.TestCase):
 
         self.assertFalse(assign_command.lab_assigned(course_number, lab_number))
         self.assertEqual(response, "Error assigning to lab.")
+
+
+class ViewLabsUnitTests(unittest.TestCase):
+    def setUp(self):
+        tfi = TextFileInterface(relative_directory="TestDB/")
+        self.environment = Environment(tfi, DEBUG=True)
+        self.environment.database.clear_database()
+        self.environment.database.create_account("root", "root", "administrator")
+
+        self.environment.database.create_course("361", "SoftwareEngineering")
+        self.environment.database.create_lab("361", "801")
+        self.environment.database.create_lab("361", "802")
+        self.environment.database.create_lab("361", "803")
+
+        self.environment.database.create_account("apoorv", "password", "TA")
+
+        self.environment.database.set_lab_assignment("361", "802", "apoorv")
+
+    def test_view_labs_not_logged_in(self):
+        view_command = ViewLabs(self.environment)
+        response = view_command.action(["view_labs"])
+
+        self.assertEqual(response, "Error viewing labs.")
+
+    def test_view_labs_wrong_num_args(self):
+        self.environment.user = User("root", "administrator")
+        view_command = ViewLabs(self.environment)
+        response = view_command.action(["view_labs", "extraBogusArg"])
+
+        self.assertEqual(response, "Error viewing labs.")
+
+    # really dumb test - any role can view labs
+    def test_view_labs_no_permissions(self):
+        self.environment.user = User("bogusUser", "bogusRole")
+        view_command = ViewLabs(self.environment)
+        response = view_command.action(["view_labs", "extraBogusArg"])
+
+        self.assertEqual(response, "Error viewing labs.")
+
+    def test_view_labs_correct(self):
+        self.environment.user = User("root", "administrator")
+        view_command = ViewLabs(self.environment)
+        response = view_command.action(["view_labs"])
+
+        self.assertEqual(response,  "361 801\n" +
+                                    "361 802 apoorv\n" +
+                                    "361 803\n")
