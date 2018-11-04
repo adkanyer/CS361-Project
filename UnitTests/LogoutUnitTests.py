@@ -4,6 +4,7 @@ from TextFileInterface import TextFileInterface
 from Environment import Environment
 from User import User
 
+
 class LogoutUnitTests(TestCase):
     def setUp(self):
         tfi = TextFileInterface(relative_directory="TestDB/")

@@ -55,17 +55,17 @@ class CreateCourse(Command.Command):
 
     """
         args is a list containing the following:
-            ["create_Course", course_number, course_name,]
+            ["create_course", course_number, course_name,]
     """
     def action(self, args):
-        SUCCESS_MESSAGE = "Created course"
+        SUCCESS_MESSAGE = "Created course."
         FAILURE_MESSAGE = "Error creating course."
 
         if self.environment.user is None:
             self.environment.debug("You must be logged in to perform this action.")
             return FAILURE_MESSAGE
 
-        if self.environment.user.get_role() not in ["supervisor", "admin"]:
+        if self.environment.user.get_role() not in ["supervisor", "administrator"]:
             self.environment.debug("Permission Denied")
             return FAILURE_MESSAGE
 
