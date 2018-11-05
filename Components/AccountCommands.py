@@ -80,13 +80,21 @@ class ViewAccounts(Command.Command):
             Username Role
     """
     def action(self, args):
+        result = ""
         FAILURE_MESSAGE = "Error viewing accounts."
+
+        if len(args) != 1:
+            self.environment.debug("Invalid arguments.")
+            return FAILURE_MESSAGE
 
         if self.environment.user is None:
             self.environment.debug("You must be logged in to perform this action.")
             return FAILURE_MESSAGE
 
-        result = ""
+        if self.environment.user.get_role() not in ["administrator", "supervisor"]:
+            self.environment.debug("Permission denied")
+            return FAILURE_MESSAGE
+
         accounts = self.environment.database.get_accounts()
         for account in accounts:
             result += f"{account['name']} {account['role']}\n"

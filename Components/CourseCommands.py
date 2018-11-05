@@ -19,7 +19,7 @@ class AssignCourse(Command.Command):
             self.environment.debug("You must be logged in to perform this action.")
             return FAILURE_MESSAGE
 
-        if self.environment.user.get_role() not in ["supervisor", "admin"]:
+        if self.environment.user.get_role() not in ["supervisor"]:
             self.environment.debug("Permission Denied")
             return FAILURE_MESSAGE
 
@@ -91,4 +91,27 @@ class ViewCourses(Command.Command):
         self.environment = environment
 
     def action(self, args):
-        FAILURE_MESSAGE = "Error viewing courses"
+        result = ""
+        FAILURE_MESSAGE = "Error viewing courses."
+
+        if len(args) != 1:
+            self.environment.debug("Invalid arguments.")
+            return FAILURE_MESSAGE
+
+        if self.environment.user is None:
+            self.environment.debug("You must be logged in to perform this action.")
+            return FAILURE_MESSAGE
+
+        if self.environment.user.get_role() not in ["instructor", "administrator", "supervisor"]:
+            self.environment.debug("Permission denied.")
+            return FAILURE_MESSAGE
+
+        courses = self.environment.database.get_courses()
+        course_assignments = self.environment.database.get_course_assignments()
+        for course in courses:
+            result += f"{course['course_number']} {course['course_name']}"
+            for course_assignment in course_assignments:
+                if course["course_number"] == course_assignment["course_number"]:
+                    result += f" {course_assignment['instructor_name']}"
+            result += "\n"
+        return result

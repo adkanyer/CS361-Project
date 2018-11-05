@@ -1,6 +1,6 @@
 import unittest
 from TextFileInterface import TextFileInterface
-from Components.CourseCommands import CreateCourse, AssignCourse
+from Components.CourseCommands import CreateCourse, AssignCourse, ViewCourses
 from Environment import Environment
 from User import User
 
@@ -77,8 +77,165 @@ class CreateCourseUnitTests(unittest.TestCase):
         
 class AssignCourseUnitTests(unittest.TestCase):
     def setUp(self):
-        pass
+        tfi = TextFileInterface(relative_directory="TestDB/")
+        self.environment = Environment(tfi, DEBUG=True)
+        self.environment.database.clear_database()
+        self.environment.database.create_account("root", "root", "supervisor")
+        self.environment.database.create_course("361", "SoftwareEngineering")
+
+    def test_assign_lab_correct_args_and_permissions(self):
+        self.environment.user = User("root", "supervisor")
+        self.environment.database.create_account("jayson", "password", "instructor")
+
+        course_number = "361"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number, "jayson"])
+
+        self.assertTrue(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Assigned to course.")
+
+        self.environment.user = User("root", "supervisor")
+
+    def test_assign_lab_no_permissions(self):
+        self.environment.user = User("admin", "administrator")
+
+        course_number = "361"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number, "jayson"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+        self.environment.user = User("jayson", "instructor")
+        response = assign_command.action(["assign_course", course_number, "jayson"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+        self.environment.user = User("apoorv", "TA")
+        response = assign_command.action(["assign_course", course_number, "jayson"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+    def test_assign_lab_not_logged_in(self):
+        course_number = "361"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number, "jayson"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+    def test_assign_lab_wrong_num_args(self):
+        self.environment.user = User("root", "supervisor")
+
+        course_number = "361"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+    def test_assign_lab_that_doesnt_exist(self):
+        self.environment.user = User("root", "supervisor")
+
+        course_number = "1000000"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number, "jayson"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+    def test_assign_lab_that_already_assigned(self):
+        self.environment.user = User("root", "supervisor")
+
+        course_number = "361"
+
+        assign_command = AssignCourse(self.environment)
+        self.environment.database.set_course_assignment(course_number, "jayson")
+        self.assertTrue(assign_command.course_assigned(course_number))
+
+        response = assign_command.action(["assign_course", course_number, "newUser"])
+
+        self.assertEqual(response, "Error assigning to course.")
+
+    def test_assign_lab_to_nonexistant_user(self):
+        self.environment.user = User("root", "supervisor")
+
+        course_number = "361"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number, "IDontExist"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+    def test_assign_course_to_not_an_instructor(self):
+        self.environment.user = User("root", "supervisor")
+        self.environment.database.create_account("admin", "password", "administrator")
+        self.environment.database.create_account("supervisor", "password", "supervisor")
+        self.environment.database.create_account("ta", "password", "TA")
+
+        course_number = "361"
+        assign_command = AssignCourse(self.environment)
+        response = assign_command.action(["assign_course", course_number, "admin"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+        response = assign_command.action(["assign_course", course_number, "supervisor"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
+
+        response = assign_command.action(["assign_course", course_number, "TA"])
+
+        self.assertFalse(assign_command.course_assigned(course_number))
+        self.assertEqual(response, "Error assigning to course.")
 
 class ViewCoursesUnitTests(unittest.TestCase):
     def setUp(self):
-        pass
+        tfi = TextFileInterface(relative_directory="TestDB/")
+        self.environment = Environment(tfi, DEBUG=True)
+        self.environment.database.clear_database()
+        self.environment.database.create_account("root", "root", "supervisor")
+
+        self.environment.database.create_course("361", "SoftwareEngineering")
+
+
+        self.environment.database.create_account("jayson", "password", "instructor")
+
+        self.environment.database.set_course_assignment("361", "jayson")
+
+    def test_view_courses_not_logged_in(self):
+        view_command = ViewCourses(self.environment)
+        response = view_command.action(["view_courses"])
+
+        self.assertEqual(response, "Error viewing courses.")
+
+    def test_view_labs_wrong_num_args(self):
+        self.environment.user = User("root", "supervisor")
+        view_command = ViewCourses(self.environment)
+        response = view_command.action(["view_courses", "extraBogusArg"])
+
+        self.assertEqual(response, "Error viewing courses.")
+
+    # really dumb test - any role can view labs
+    def test_view_labs_no_permissions(self):
+        self.environment.user = User("bogusUser", "bogusRole")
+        view_command = ViewCourses(self.environment)
+        response = view_command.action(["view_courses"])
+
+        self.assertEqual(response, "Error viewing courses.")
+
+        self.environment.user = User("apoorv", "TA")
+        view_command = ViewCourses(self.environment)
+        response = view_command.action(["view_courses"])
+
+        self.assertEqual(response, "Error viewing courses.")
+
+    def test_view_courses_correct(self):
+        self.environment.user = User("root", "supervisor")
+        view_command = ViewCourses(self.environment)
+        response = view_command.action(["view_courses"])
+
+        self.assertEqual(response,  "361 SoftwareEngineering jayson\n")
