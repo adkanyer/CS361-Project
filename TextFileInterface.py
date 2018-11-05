@@ -90,7 +90,7 @@ class TextFileInterface(DataInterface.DataInterface):
         course_file.close()
         for line in lines:
             fields = line.split(":")
-            courses.append({"number": fields[0], "name": fields[1].rstrip()})
+            courses.append({"course_number": fields[0], "course_name": fields[1].rstrip()})
         return courses
 
     def set_course_assignment(self, course_number, instructor_name):
@@ -101,7 +101,9 @@ class TextFileInterface(DataInterface.DataInterface):
     def get_course_assignments(self):
         assignments = []
         course_assignment_file = open(self.course_assignment_filename, "r")
-        for line in course_assignment_file.readlines():
+        lines = course_assignment_file.readlines()
+        course_assignment_file.close()
+        for line in lines:
             fields = line.split(":")
             assignments.append({"course_number": fields[0], "instructor_name": fields[1].rstrip()})
         return assignments

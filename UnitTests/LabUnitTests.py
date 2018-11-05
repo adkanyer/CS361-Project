@@ -212,7 +212,7 @@ class ViewLabsUnitTests(unittest.TestCase):
     def test_view_labs_no_permissions(self):
         self.environment.user = User("bogusUser", "bogusRole")
         view_command = ViewLabs(self.environment)
-        response = view_command.action(["view_labs", "extraBogusArg"])
+        response = view_command.action(["view_labs"])
 
         self.assertEqual(response, "Error viewing labs.")
 
