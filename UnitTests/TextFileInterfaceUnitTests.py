@@ -13,7 +13,8 @@ class TextFileInterfaceUnitTests(unittest.TestCase):
 
     def setUp(self):
         self.tfi = TextFileInterface(
-            relative_directory="../../CS361-Project/TextDB/")
+            relative_directory="TestDB/")
+        self.tfi.clear_database()
 
     def test_constructor(self):
         self.assertIsNotNone(self.tfi.account_filename)
@@ -77,7 +78,6 @@ class TextFileInterfaceUnitTests(unittest.TestCase):
 
         self.assertEqual(lines, ["account:"+self.hashed_password(password)+":newrole\n"])
 
-
     def test_get_accounts(self):
         password1 = "pass"
         password2 = "pass2"
@@ -90,5 +90,48 @@ class TextFileInterfaceUnitTests(unittest.TestCase):
         self.assertEqual(accounts, [{"name":"account", "password":self.hashed_password(password1), "role":"role"},
                                     {"name":"account2","password":self.hashed_password(password2), "role":"role2"}])
 
+    def test_get_set_logged_in(self):
+        self.tfi.set_logged_in("account")
 
+        response = self.tfi.get_logged_in()
 
+        self.assertEqual(response, "account")
+
+    def test_set_logged_in_set_logged_out(self):
+        self.tfi.set_logged_in("account")
+
+        response = self.tfi.get_logged_in()
+        self.assertEqual(response, "account")
+
+        self.tfi.set_logged_out()
+
+        response = self.tfi.get_logged_in()
+        self.assertEqual(response, "")
+
+    def test_create_course_get_courses(self):
+        self.tfi.create_course("361", "CompSci361")
+
+        response = self.tfi.get_courses()
+
+        self.assertEqual(response, [{"course_name":"CompSci361", "course_number":"361"}])
+
+    def test_create_course_assignments_get_courses_assignments(self):
+        self.tfi.set_course_assignment("361", "jayson")
+
+        response = self.tfi.get_course_assignments()
+
+        self.assertEqual(response, [{"instructor_name":"jayson", "course_number":"361"}])
+
+    def test_create_lab_get_labs(self):
+        self.tfi.create_lab("361", "801")
+
+        response = self.tfi.get_labs()
+
+        self.assertEqual(response, [{"course_number":"361", "lab_number":"801"}])
+
+    def test_create_lab_assignment_get_lab_assignments(self):
+        self.tfi.set_lab_assignment("361", "801", "apoorv")
+
+        response = self.tfi.get_lab_assignments()
+
+        self.assertEqual(response, [{"course_number":"361", "lab_number":"801", "ta_name":"apoorv"}])
