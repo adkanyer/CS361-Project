@@ -74,7 +74,8 @@ class CreateCourseUnitTests(unittest.TestCase):
 
         self.assertEqual(response, "Error creating course.")
         self.assertFalse(create_course.course_exists(course_id))
-        
+
+
 class AssignCourseUnitTests(unittest.TestCase):
     def setUp(self):
         tfi = TextFileInterface(relative_directory="TestDB/")
@@ -191,6 +192,7 @@ class AssignCourseUnitTests(unittest.TestCase):
 
         self.assertFalse(assign_command.course_assigned(course_number))
         self.assertEqual(response, "Error assigning to course.")
+
 
 class ViewCoursesUnitTests(unittest.TestCase):
     def setUp(self):
