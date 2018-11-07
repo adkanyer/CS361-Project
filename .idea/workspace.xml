@@ -1,370 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="30628611-60a7-4fd7-96da-6c22f88ea35b" name="Default Changelist" comment="Fixed LoginUnitTests and LogoutUnitTests">
-      <change afterPath="$PROJECT_DIR$/UnitTests/UITests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/TestDB/account.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/TestDB/account.txt" afterDir="false" />
-    </list>
-    <ignored path="C:\Users\andyk\PycharmProjects\CS361-Project\.idea\shelf/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_for_AccountUnitTests_CreateAccountUnitTests.coverage" NAME="Unittests for AccountUnitTests.CreateAccountUnitTests Coverage Results" MODIFIED="1541559242311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
-    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_for_LoginUnitTests_LoginUnitTests_test_wrong_both.coverage" NAME="Unittests for LoginUnitTests.LoginUnitTests.test_wrong_both Coverage Results" MODIFIED="1541294311167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
-    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_for_LogoutUnitTests_LogoutUnitTests.coverage" NAME="Unittests for LogoutUnitTests.LogoutUnitTests Coverage Results" MODIFIED="1541295037391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
-    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_for_LoginUnitTests_LoginUnitTests_test_not_enough_args.coverage" NAME="Unittests for LoginUnitTests.LoginUnitTests.test_not_enough_args Coverage Results" MODIFIED="1541293386334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
-    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_for_AccountUnitTests_Create_Account_Unit_Tests.coverage" NAME="Unittests for AccountUnitTests.Create_Account_Unit_Tests Coverage Results" MODIFIED="1541293438618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
-    <SUITE FILE_PATH="coverage/CS361_Project$CommandTests.coverage" NAME="CommandTests Coverage Results" MODIFIED="1541524538238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS361_Project_Fork$main.coverage" NAME="main Coverage Results" MODIFIED="1541089434123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_for_LoginUnitTests_LoginUnitTests.coverage" NAME="Unittests for LoginUnitTests.LoginUnitTests Coverage Results" MODIFIED="1541296002329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
-    <SUITE FILE_PATH="coverage/CS361_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1541292056301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="239" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1116635183">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="8" />
-          <entry key="txt" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="45" />
-          <entry key="py" value="983" />
-          <entry key="txt" value="96" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="141" />
-          <entry key="Python" value="983" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="642226542">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.7" value="5" />
-          <entry key="project.opened" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="1597" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="1597" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="18" />
-          <entry key="txt" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="18" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UnitTests/AccountUnitTests.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-136">
-                  <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UnitTests/TextFileInterfaceUnitTests.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TextFileInterface.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#0#22#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/UnitTests/UITests.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UI.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="148">
-                  <caret line="12" column="78" lean-forward="true" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UnitTests/CommandUnitTests.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/UI.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="63">
-                  <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UnitTests/UserUnitTests.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/TextDB/lab_assignment.txt" />
-        <option value="$PROJECT_DIR$/Components/CourseCommands.py" />
-        <option value="$PROJECT_DIR$/UnitTests/account_unit_tests.py" />
-        <option value="$PROJECT_DIR$/UnitTests/login_unit_tests.py" />
-        <option value="$PROJECT_DIR$/TextFileInterface.py" />
-        <option value="$PROJECT_DIR$/UnitTests/LoginUnitTests.py" />
-        <option value="$PROJECT_DIR$/UnitTests/LogoutUnitTests.py" />
-        <option value="$PROJECT_DIR$/UnitTests/CommandTests.py" />
-        <option value="$PROJECT_DIR$/UnitTests/AccountUnitTests.py" />
-        <option value="$PROJECT_DIR$/UnitTests/TestDB/UITests.py" />
-        <option value="$PROJECT_DIR$/UnitTests/UITests.py" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_UserUnitTests_py.coverage" NAME="Unittests in UserUnitTests.py Coverage Results" MODIFIED="1541565341451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_TextFileInterfaceUnitTests_py.coverage" NAME="Unittests in TextFileInterfaceUnitTests.py Coverage Results" MODIFIED="1541565327976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_UnitTests.coverage" NAME="Unittests in UnitTests Coverage Results" MODIFIED="1541565254866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_UITests_py.coverage" NAME="Unittests in UITests.py Coverage Results" MODIFIED="1541565335073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_LabUnitTests_py.coverage" NAME="Unittests in LabUnitTests.py Coverage Results" MODIFIED="1541565305607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_LoginUnitTests_py.coverage" NAME="Unittests in LoginUnitTests.py Coverage Results" MODIFIED="1541565312891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_CommandUnitTests_py.coverage" NAME="Unittests in CommandUnitTests.py Coverage Results" MODIFIED="1541565284807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_LogoutUnitTests_py.coverage" NAME="Unittests in LogoutUnitTests.py Coverage Results" MODIFIED="1541565321238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_CourseUnitTests_py.coverage" NAME="Unittests in CourseUnitTests.py Coverage Results" MODIFIED="1541565297850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
+    <SUITE FILE_PATH="coverage/CS361_Project$Unittests_in_AccountUnitTests_py.coverage" NAME="Unittests in AccountUnitTests.py Coverage Results" MODIFIED="1541565271928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UnitTests" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-115" />
-    <option name="y" value="45" />
+    <option name="x" value="-112" />
+    <option name="y" value="46" />
     <option name="width" value="1940" />
     <option name="height" value="1760" />
   </component>
-  <component name="ProjectLevelVcsManager">
-    <OptionsSetting value="false" id="Update" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="CS361-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS361-Project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS361-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS361-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS361-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS361-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Documents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS361-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS361-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="TextDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS361-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS361-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="UnitTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS361-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS361-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="UnitTests" type="462c0819:PsiDirectoryNode" />
-              <item name="TestDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Erin\Documents\GitHub\CS361-Project\UnitTests" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python tests.Unittests for AccountUnitTests.CreateAccountUnitTests">
-    <configuration name="CommandTests" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CS361-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python\Python37-32\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UnitTests/CommandTests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="CS361-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python\Python37-32\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for AccountUnitTests.CreateAccountUnitTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in UserUnitTests.py">
+    <configuration name="Unittests in LoginUnitTests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="CS361-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -375,11 +33,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;AccountUnitTests.CreateAccountUnitTests&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/UnitTests/LoginUnitTests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for LoginUnitTests.LoginUnitTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in LogoutUnitTests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="CS361-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -390,11 +48,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;LoginUnitTests.LoginUnitTests&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/UnitTests/LogoutUnitTests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for LoginUnitTests.LoginUnitTests.test_wrong_both" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in TextFileInterfaceUnitTests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="CS361-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -405,11 +63,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;LoginUnitTests.LoginUnitTests.test_wrong_both&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/UnitTests/TextFileInterfaceUnitTests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for LogoutUnitTests.LogoutUnitTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in UITests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="CS361-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -420,370 +78,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;LogoutUnitTests.LogoutUnitTests&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/UnitTests/UITests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in UserUnitTests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="CS361-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UnitTests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/UnitTests/UserUnitTests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for LoginUnitTests.LoginUnitTests" />
-      <item itemvalue="Python tests.Unittests for LoginUnitTests.LoginUnitTests.test_wrong_both" />
-      <item itemvalue="Python tests.Unittests for LogoutUnitTests.LogoutUnitTests" />
-      <item itemvalue="Python.CommandTests" />
-      <item itemvalue="Python tests.Unittests for AccountUnitTests.CreateAccountUnitTests" />
+      <item itemvalue="Python tests.Unittests in LoginUnitTests.py" />
+      <item itemvalue="Python tests.Unittests in LogoutUnitTests.py" />
+      <item itemvalue="Python tests.Unittests in TextFileInterfaceUnitTests.py" />
+      <item itemvalue="Python tests.Unittests in UITests.py" />
+      <item itemvalue="Python tests.Unittests in UserUnitTests.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for AccountUnitTests.CreateAccountUnitTests" />
-        <item itemvalue="Python.CommandTests" />
-        <item itemvalue="Python tests.Unittests for LoginUnitTests.LoginUnitTests" />
-        <item itemvalue="Python tests.Unittests for LogoutUnitTests.LogoutUnitTests" />
-        <item itemvalue="Python tests.Unittests for LoginUnitTests.LoginUnitTests.test_wrong_both" />
+        <item itemvalue="Python tests.Unittests in UserUnitTests.py" />
+        <item itemvalue="Python tests.Unittests in UITests.py" />
+        <item itemvalue="Python tests.Unittests in TextFileInterfaceUnitTests.py" />
+        <item itemvalue="Python tests.Unittests in LogoutUnitTests.py" />
+        <item itemvalue="Python tests.Unittests in LoginUnitTests.py" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="30628611-60a7-4fd7-96da-6c22f88ea35b" name="Default Changelist" comment="Completed assign_course and delete_account&#10;Had to add get_course_assignments and get_lab_assignments methods to &#10;DataInterface and TextFileInterface" />
-      <created>1540915666104</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1540915666104</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Completed create_ and assign_lab">
-      <created>1541292245391</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1541292245391</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Fixed LoginUnitTests and LogoutUnitTests">
-      <created>1541295477810</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1541295477810</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fixed LoginUnitTests and LogoutUnitTests">
-      <created>1541295664532</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1541295664532</updated>
-    </task>
-    <task id="LOCAL-00004" summary="&#10;fixed spelling">
-      <created>1541277360297</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1541277360297</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fixed imports in main">
-      <created>1541277451282</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1541277451282</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fixed imports in main">
-      <created>1541278208528</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1541278208528</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Moved database and user into Environment class that gets passed to each command class.">
-      <created>1541279564731</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1541279564731</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Completed assign_course and delete_account&#10;Had to add get_course_assignments and get_lab_assignments methods to &#10;DataInterface and TextFileInterface">
-      <created>1541284269813</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1541284269814</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
-    <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_for_LoginUnitTests_LoginUnitTests - 2018.11.03 at 20h 17m 52s.xml">
-      <configuration name="Unittests for LoginUnitTests.LoginUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_LoginUnitTests_LoginUnitTests_test_wrong_both - 2018.11.03 at 20h 18m 31s.xml">
-      <configuration name="Unittests for LoginUnitTests.LoginUnitTests.test_wrong_both" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_LoginUnitTests_LoginUnitTests - 2018.11.03 at 20h 24m 20s.xml">
-      <configuration name="Unittests for LoginUnitTests.LoginUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_LoginUnitTests_LoginUnitTests - 2018.11.03 at 20h 25m 21s.xml">
-      <configuration name="Unittests for LoginUnitTests.LoginUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_LogoutUnitTests_LogoutUnitTests - 2018.11.03 at 20h 28m 49s.xml">
-      <configuration name="Unittests for LogoutUnitTests.LogoutUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_LogoutUnitTests_LogoutUnitTests - 2018.11.03 at 20h 30m 37s.xml">
-      <configuration name="Unittests for LogoutUnitTests.LogoutUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_AccountUnitTests_CreateAccountUnitTests - 2018.11.06 at 11h 15m 57s.xml">
-      <configuration name="Unittests for AccountUnitTests.CreateAccountUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_AccountUnitTests_CreateAccountUnitTests - 2018.11.06 at 11h 16m 42s.xml">
-      <configuration name="Unittests for AccountUnitTests.CreateAccountUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_AccountUnitTests_CreateAccountUnitTests - 2018.11.06 at 11h 17m 17s.xml">
-      <configuration name="Unittests for AccountUnitTests.CreateAccountUnitTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_AccountUnitTests_CreateAccountUnitTests - 2018.11.06 at 20h 54m 02s.xml">
-      <configuration name="Unittests for AccountUnitTests.CreateAccountUnitTests" configurationId="tests" />
-    </history-entry>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20134228" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49828178" weight="0.32897863" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4919463" visible="true" weight="0.32765958" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.329718" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4966443" weight="0.32765958" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4969072" weight="0.32779098" />
-      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49621993" weight="0.32897863" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5080537" side_tool="true" weight="0.32765958" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="right" id="Coverage" order="5" side_tool="true" visible="true" weight="0.23624161" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19597316" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49828178" weight="0.32897863" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4919463" visible="true" weight="0.32765958" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.329718" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4966443" weight="0.32765958" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4969072" weight="0.32779098" />
-      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49621993" weight="0.32897863" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5080537" side_tool="true" weight="0.32765958" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="right" id="Coverage" order="5" side_tool="true" visible="true" weight="0.23624161" />
-    </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing commit on my fork" />
-    <MESSAGE value="Added AssignCourse, changed files" />
-    <MESSAGE value="Edited" />
-    <MESSAGE value="&#10;fixed spelling" />
-    <MESSAGE value="fixed imports in main" />
-    <MESSAGE value="Moved database and user into Environment class that gets passed to each command class." />
-    <MESSAGE value="Completed assign_course and delete_account&#10;Had to add get_course_assignments and get_lab_assignments methods to &#10;DataInterface and TextFileInterface" />
-    <MESSAGE value="Completed create_ and assign_lab" />
-    <MESSAGE value="Fixed LoginUnitTests and LogoutUnitTests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed LoginUnitTests and LogoutUnitTests" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TextDB/course.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataInterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextDB/course_assignment.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextDB/lab_assignment.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextDB/lab.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Python/Python37-32/Lib/unittest/case.py" />
-    <entry file="file://$PROJECT_DIR$/UnitTests/LogoutUnitTests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/AccountCommands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/Logout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Environment.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/CommandTests.py" />
-    <entry file="file://$PROJECT_DIR$/Components/LabCommands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/CourseCommands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/TestDB/account.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/TestDB/course.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/Login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/UserUnitTests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/LoginUnitTests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/AccountUnitTests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextFileInterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/CommandUnitTests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/TextFileInterfaceUnitTests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="12" column="78" lean-forward="true" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/UITests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
