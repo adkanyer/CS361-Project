@@ -17,3 +17,6 @@ class CommandTests(TestCase):
 
     def test_command(self):
         self.assertEquals(self.ui.command("invalid_arg arg arg arg"), "Invalid Command")
+
+    def test_valid_command(self):
+        self.assertEqual(self.ui.command("assign_lab 361 801 appoorv"), "Error assigning to lab.")

@@ -74,12 +74,6 @@ class CreateCourse(Command.Command):
             return FAILURE_MESSAGE
 
         course_number = args[1]
-        try:
-            int(course_number)
-        except ValueError:
-            self.environment.debug("Invalid Arguments")
-            return FAILURE_MESSAGE
-
         course_name = args[2]
 
         if self.course_exists(course_number):
