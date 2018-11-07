@@ -84,7 +84,7 @@ class AssignCourseUnitTests(unittest.TestCase):
         self.environment.database.create_account("root", "root", "supervisor")
         self.environment.database.create_course("361", "SoftwareEngineering")
 
-    def test_assign_lab_correct_args_and_permissions(self):
+    def test_assign_course_correct_args_and_permissions(self):
         self.environment.user = User("root", "supervisor")
         self.environment.database.create_account("jayson", "password", "instructor")
 
@@ -97,7 +97,7 @@ class AssignCourseUnitTests(unittest.TestCase):
 
         self.environment.user = User("root", "supervisor")
 
-    def test_assign_lab_no_permissions(self):
+    def test_assign_course_no_permissions(self):
         self.environment.user = User("admin", "administrator")
 
         course_number = "361"
@@ -119,7 +119,7 @@ class AssignCourseUnitTests(unittest.TestCase):
         self.assertFalse(assign_command.course_assigned(course_number))
         self.assertEqual(response, "Error assigning to course.")
 
-    def test_assign_lab_not_logged_in(self):
+    def test_assign_course_not_logged_in(self):
         course_number = "361"
         assign_command = AssignCourse(self.environment)
         response = assign_command.action(["assign_course", course_number, "jayson"])
@@ -127,7 +127,7 @@ class AssignCourseUnitTests(unittest.TestCase):
         self.assertFalse(assign_command.course_assigned(course_number))
         self.assertEqual(response, "Error assigning to course.")
 
-    def test_assign_lab_wrong_num_args(self):
+    def test_assign_course_wrong_num_args(self):
         self.environment.user = User("root", "supervisor")
 
         course_number = "361"
@@ -137,7 +137,7 @@ class AssignCourseUnitTests(unittest.TestCase):
         self.assertFalse(assign_command.course_assigned(course_number))
         self.assertEqual(response, "Error assigning to course.")
 
-    def test_assign_lab_that_doesnt_exist(self):
+    def test_assign_course_that_doesnt_exist(self):
         self.environment.user = User("root", "supervisor")
 
         course_number = "1000000"
@@ -147,7 +147,7 @@ class AssignCourseUnitTests(unittest.TestCase):
         self.assertFalse(assign_command.course_assigned(course_number))
         self.assertEqual(response, "Error assigning to course.")
 
-    def test_assign_lab_that_already_assigned(self):
+    def test_assign_course_that_already_assigned(self):
         self.environment.user = User("root", "supervisor")
 
         course_number = "361"
@@ -160,7 +160,7 @@ class AssignCourseUnitTests(unittest.TestCase):
 
         self.assertEqual(response, "Error assigning to course.")
 
-    def test_assign_lab_to_nonexistant_user(self):
+    def test_assign_course_to_nonexistant_user(self):
         self.environment.user = User("root", "supervisor")
 
         course_number = "361"
